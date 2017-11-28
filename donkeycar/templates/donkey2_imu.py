@@ -120,8 +120,8 @@ def drive(cfg, model_path=None, use_joystick=False):
     V.add(throttle, inputs=['throttle'])
     
     #add tub to save data
-    inputs=['cam/image_array', 'user/angle', 'user/throttle', 'user/mode']
-    types=['image_array', 'float', 'float',  'str']
+    inputs=['cam/image_array', 'user/angle', 'user/throttle', 'user/mode', 'imu/a_x', 'imu/a_y', 'imu/a_z', 'imu/g_x', 'imu/g_y', 'imu/g_z']
+    types=['image_array', 'float', 'float',  'str', 'float', 'float', 'float', 'float', 'float', 'float']
     
     th = TubHandler(path=cfg.DATA_PATH)
     tub = th.new_tub_writer(inputs=inputs, types=types)

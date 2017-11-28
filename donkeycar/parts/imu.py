@@ -13,7 +13,7 @@ class Bno055:
     pip install RPi.GPIO
     '''
 
-    def __init__(self, poll_delay=0.0166):
+    def __init__(self, poll_delay=0.02):
         from Adafruit_BNO055 import BNO055
         self.sensor = BNO055.BNO055(rst=12)
         self.accel = { 'x' : 0., 'y' : 0., 'z' : 0. }
@@ -46,6 +46,7 @@ class Bno055:
         self.heading, self.roll, self.pitch = self.sensor.read_euler()
 
     def run_threaded(self):
+        self.poll()
         return self.accel['x'], self.accel['y'], self.accel['z'], self.gyro['x'], self.gyro['y'], self.gyro['z'], self.temp
 
     def run(self):
