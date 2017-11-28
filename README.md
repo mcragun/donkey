@@ -6,6 +6,18 @@ Donkeycar is minimalist and modular self driving library for Python. It is
 developed for hobbiests and students with a focus on allowing fast experimentation and easy 
 community contributions.  
 
+### MATT's CHANGES
+/donkeycar/parts/imu.py
+/donkeycar/templates/donkey2_imu.py
+
+create a new car with:
+
+```
+donkey createcar --template donkey2_imu.py ~/d2_imu
+```
+
+
+
 #### Quick Links
 * [Donkeycar Updates & Examples](http://donkeycar.com)
 * [Build instructions and Software documentation](http://docs.donkeycar.com)
